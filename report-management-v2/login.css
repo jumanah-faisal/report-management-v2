@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #83b1cb, #e6f3ff);
+    animation: fadeIn 1s ease-in;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 76, 151, 0.1);
+    width: 400px;
+    transform: translateY(0);
+    animation: slideUp 0.8s ease-out;
+}
+
+.auth-icon {
+    text-align: center;
+    margin: 30px 0;
+    position: relative;
+    height: 80px;
+}
+
+.auth-icon svg {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.lock {
+    animation: spin 1s ease-in-out, fadeOut 0.5s 1.5s forwards;
+    fill: #1a3d6d;
+}
+
+.camera {
+    opacity: 0;
+    animation: fadeInScale 0.8s 2s forwards, fadeOut 0.5s 3.5s forwards;
+    fill: #2a5a9a;
+}
+
+.report {
+    opacity: 0;
+    animation: fadeInScale 0.8s 4s forwards;
+    fill: #4d8fdf;
+}
+
+@keyframes spin {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; transform: translateX(-50%) scale(0.5); }
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: translateX(-50%) scale(0.5); }
+    to { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+
+h2 {
+    color: #1a3d6d;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2a4e7d;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0efff;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #4d8fdf;
+    outline: none;
+    box-shadow: 0 0 8px rgba(77, 143, 223, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #2a5a9a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #1a3d6d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 61, 109, 0.3);
+}
+.back-button {
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
